@@ -1,61 +1,80 @@
 # Cayo Henrique — Portfólio
 
-Portfólio pessoal estático de Cayo Henrique, desenvolvedor em formação focado em Python, Linux, automação e criação de ferramentas.
+Portfólio pessoal de Cayo Henrique, desenvolvedor em formação focado em Python, Linux, automação e criação de ferramentas.
 
-## Objetivo
-
-Apresentar o perfil, os serviços possíveis, projetos próprios e o código público disponível no GitHub, com uma experiência rápida e responsiva.
+O projeto é predominantemente estático e foi construído com Astro, CSS e JavaScript puro. O design e o conteúdo preservam a identidade do portfólio original: técnico, independente, direto e sem exagerar a experiência profissional.
 
 ## Tecnologias
 
+- Astro
 - HTML semântico
-- CSS responsivo, sem framework
+- CSS responsivo, sem framework visual
 - JavaScript puro
 - API pública do GitHub para listar repositórios
 
-## Executar localmente
+## Desenvolvimento local
 
-O projeto não precisa de dependências ou build. Como o navegador bloqueia algumas requisições quando arquivos são abertos diretamente, sirva a pasta com um servidor HTTP local:
+Requisitos: Node.js 18.17 ou superior e npm.
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Depois, acesse `http://localhost:8000`.
+Depois, acesse `http://localhost:4321`.
 
-## Build
+## Build e preview
 
-Não há etapa de build: os arquivos prontos para publicação são `index.html`, `css/`, `js/` e `public/`.
+```bash
+npm run build
+npm run preview
+```
 
-## Deploy
+O build está configurado como estático e gera a pasta `dist/`.
 
-### Vercel
+## Deploy na Vercel
 
 1. Suba este projeto para um repositório no GitHub.
 2. Importe o repositório na Vercel.
-3. Mantenha o preset como projeto estático, sem comando de build e sem diretório de saída personalizado.
-4. Publique. A Vercel fará novos deploys a cada push.
+3. Selecione Astro como framework, caso a detecção automática não aconteça.
+4. Use `astro build` como comando de build e `dist` como diretório de saída.
+5. Publique. Os próximos pushes podem disparar deploys automáticos.
 
-### GitHub Pages ou Cloudflare Pages
-
-Publique a raiz do projeto como site estático. Não há backend ou variáveis de ambiente obrigatórias.
+O projeto não usa servidor próprio, SSR, backend ou variáveis de ambiente obrigatórias.
 
 ## Estrutura
 
 ```text
 .
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── main.js
 ├── public/
 │   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   ├── About.astro
+│   │   ├── Contact.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── Projects.astro
+│   │   ├── Services.astro
+│   │   └── Technologies.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   └── index.astro
+│   ├── scripts/
+│   │   └── main.js
+│   └── styles/
+│       └── global.css
+├── astro.config.mjs
+├── package.json
 └── README.md
 ```
 
-## Observações
+## GitHub e projetos
 
-- A lista de “Outros projetos” usa `https://api.github.com/users/cayorosa093-drop/repos` no navegador, sem token.
-- Os links dos projetos em destaque começam no perfil de repositórios e são atualizados automaticamente quando a API encontra os repositórios `UniDesk` e `Flash-Lite`.
-- O e-mail permanece como placeholder até que um endereço seja definido.
+O perfil oficial usado pelo site é [github.com/cayorosa093-drop](https://github.com/cayorosa093-drop).
+
+A seção “Outros projetos” consulta a API pública `https://api.github.com/users/cayorosa093-drop/repos` diretamente no navegador, sem token. A consulta possui estado de carregamento e fallback caso o GitHub esteja indisponível. Os projetos em destaque, UniDesk e Flash-Lite, começam com um link seguro para os repositórios do perfil e são direcionados automaticamente para o repositório exato quando encontrado pela API.
+
+O e-mail permanece como placeholder até que um endereço seja definido.

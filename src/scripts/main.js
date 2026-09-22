@@ -113,16 +113,17 @@ const renderRepositories = () => {
     if (sortMode === 'name') return a.name.localeCompare(b.name);
     return new Date(b.updated_at) - new Date(a.updated_at);
   });
+  const visibleRepositories = sorted.slice(0, 9);
 
   repoList.replaceChildren();
-  if (!sorted.length) {
+  if (!visibleRepositories.length) {
     const empty = document.createElement('p');
     empty.className = 'repo-loading';
     empty.textContent = 'Nenhum outro repositório público para mostrar ainda.';
     repoList.appendChild(empty);
     return;
   }
-  sorted.forEach((repo) => repoList.appendChild(createRepoCard(repo)));
+  visibleRepositories.forEach((repo) => repoList.appendChild(createRepoCard(repo)));
 };
 
 const resolveFeaturedProjects = (repos) => {
@@ -156,5 +157,6 @@ const loadRepositories = async () => {
 };
 
 repoSort?.addEventListener('change', renderRepositories);
-document.querySelector('#current-year').textContent = new Date().getFullYear();
+const currentYear = document.querySelector('#current-year');
+if (currentYear) currentYear.textContent = new Date().getFullYear();
 loadRepositories();
