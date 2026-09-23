@@ -1,6 +1,6 @@
 const GITHUB_USERNAME = 'cayorosa093-drop';
 const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`;
-const featuredProjectNames = ['unidesk', 'flash-lite'];
+const featuredProjectNames = ['unidesck'];
 
 const normalizeName = (value = '') => value.toLowerCase().replace(/[^a-z0-9]/g, '');
 

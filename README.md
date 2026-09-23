@@ -75,6 +75,6 @@ O projeto não usa servidor próprio, SSR, backend ou variáveis de ambiente obr
 
 O perfil oficial usado pelo site é [github.com/cayorosa093-drop](https://github.com/cayorosa093-drop).
 
-A seção “Outros projetos” consulta a API pública `https://api.github.com/users/cayorosa093-drop/repos` diretamente no navegador, sem token. A consulta possui estado de carregamento e fallback caso o GitHub esteja indisponível. Os projetos em destaque, UniDesk e Flash-Lite, começam com um link seguro para os repositórios do perfil e são direcionados automaticamente para o repositório exato quando encontrado pela API.
+A seção “Outros projetos” consulta a API pública `https://api.github.com/users/cayorosa093-drop/repos` diretamente no navegador, sem token. A consulta possui estado de carregamento e fallback caso o GitHub esteja indisponível. O UniDesk aponta diretamente para `cayorosa093-drop/unidesck`. O Flash-Lite permanece sem URL até que exista um repositório público confirmado para ele.
 
-O e-mail permanece como placeholder até que um endereço seja definido.
+O contato por e-mail usa `cayo.h093@proton.me`.
