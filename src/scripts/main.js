@@ -8,6 +8,7 @@ const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('.site-nav');
 const backToTop = document.querySelector('[data-back-to-top]');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const updateScrollState = () => {
   header?.classList.toggle('scrolled', window.scrollY > 20);
@@ -35,7 +36,7 @@ siteNav?.querySelectorAll('a').forEach((link) => {
   });
 });
 
-backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' }));
 
 const revealElements = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {

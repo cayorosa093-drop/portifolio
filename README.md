@@ -2,7 +2,7 @@
 
 Portfólio pessoal de Cayo Henrique, desenvolvedor em formação focado em Python, Linux, automação e criação de ferramentas.
 
-O projeto é predominantemente estático e foi construído com Astro, CSS e JavaScript puro. O design e o conteúdo preservam a identidade do portfólio original: técnico, independente, direto e sem exagerar a experiência profissional.
+O projeto é predominantemente estático e foi construído com Astro, CSS e JavaScript puro. A identidade visual combina terminal Linux, RPG retrô e pixel art sem exagerar a experiência profissional apresentada.
 
 ## Tecnologias
 
